@@ -40,4 +40,4 @@ The box has a tab character inside it.
 ```
 
 ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈  
-Vim-draw | version 1.0.0
+Vim-Draw | version 1.0.0
