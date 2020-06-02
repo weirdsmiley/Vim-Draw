@@ -2,11 +2,13 @@
 This plugin is made to be used to design box diagrams in Vim easily.
 
 ## Installation
-Execute the following commands in your terminal.
+- For manual installation  execute the following commands in your terminal:
 ```shell
 $ mkdir -p ~/.vim/bundle/vim-draw
 $ git clone https://github.com/weirdsmiley/Vim-Draw.git ~/.vim/bundle/vim-draw/
+$ vim -u NONE -c "helptags ~/.vim/bundle/vim-draw/doc" -c q
 ```
+- For installation via make just type `make` in your terminal.
 
 ## Configurations and Tips
 - Use `visual replace mode` to edit into the diagram  
