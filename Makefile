@@ -25,7 +25,7 @@ PLUGIN=vim-draw
 DEFAULT_DIR=~/.vim/bundle/vim-draw/
 GITURL=https://github.com/weirdsmiley/Vim-Draw.git
 
-.DEAFULT_GOAL:=install
+.DEFAULT_GOAL:=install
 
 install:
 	mkdir -p $(DEFAULT_DIR)
