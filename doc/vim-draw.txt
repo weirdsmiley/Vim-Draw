@@ -1,6 +1,4 @@
-################################################################################
                                    VIM-DRAW
-################################################################################
 ================================================================================
 
 CONTENTS                                                                       
@@ -30,3 +28,7 @@ This plugin is helpful in generating box diagrams in Vim.
 ================================================================================
 
 - Below are the custom mappings defined by default
+    - "<leader>boxs" : to make the diagram with solid lines
+    - "<leader>boxd" : to make the diagram with dotted lines
+
+- The above mappings can be changed inside plugin/draw.vim
