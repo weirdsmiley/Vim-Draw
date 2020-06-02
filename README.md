@@ -39,4 +39,5 @@ $ git clone https://github.com/weirdsmiley/Vim-Draw.git ~/.vim/bundle/vim-draw/
 The box has a tab character inside it.
 ```
 
+┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
 Vim-draw | version 1.0.0
