@@ -1,0 +1,160 @@
+" " 
+" " 
+" "
+" "
+" "
+" "
+" "
+" "
+" "
+" "
+
+function! CreateSolidBox()
+	" newline
+	execute "normal! o"
+	" top left corner
+	execute "normal! \<ESC>A\<C-k>dr\<ESC>"
+	" top 16 horizontals
+	execute "normal! \<ESC>16A\<C-k>hh\<ESC>"
+	" top right corner
+	execute "normal! \<ESC>A\<C-k>dl\<ESC>"
+	" newline
+	execute "normal! o"
+	" left vertical
+	execute "normal! \<ESC>A\<C-k>vv\<ESC>"
+	" 16 whitespaces
+	execute "normal! \<ESC>16A \<ESC>"
+	" right vertical
+	execute "normal! \<ESC>A\<C-k>vv\<ESC>"
+	" newline
+	execute "normal! o"
+	" bottom left corner
+	execute "normal! \<ESC>A\<C-k>ur\<ESC>"
+	" bottom 16 horizontals
+	execute "normal! \<ESC>16A\<C-k>hh\<ESC>"
+	" bottom right corner
+	execute "normal! \<ESC>A\<C-k>ul\<ESC>"
+	" move cursor to writing position
+	execute "normal! k15h"
+	" execute "normal! \<Insert>\<Insert>"
+endfunction
+
+function! CreateDottedBox()
+	" newline
+	execute "normal! o"
+	" top left corner
+	execute "normal! \<ESC>A+\<ESC>"
+	" top 16 horizontals
+	execute "normal! \<ESC>16A-\<ESC>"
+	" top right corner
+	execute "normal! \<ESC>A+\<ESC>"
+	" newline
+	execute "normal! o"
+	" left vertical
+	execute "normal! \<ESC>A|\<ESC>"
+	" 16 whitespaces
+	execute "normal! \<ESC>16A \<ESC>"
+	" right vertical
+	execute "normal! \<ESC>A|\<ESC>"
+	" newline
+	execute "normal! o"
+	" bottom left corner
+	execute "normal! \<ESC>A+\<ESC>"
+	" bottom 16 horizontals
+	execute "normal! \<ESC>16A-\<ESC>"
+	" bottom right corner
+	execute "normal! \<ESC>A+\<ESC>"
+	" move cursor to writing position
+	execute "normal! k15h"
+endfunction
+
+function! CreateBox(type)
+	if a:type ==# "solid"
+		call CreateSolidBox()
+	elseif a:type ==# "dotted"
+		call CreateDottedBox()
+	endif
+endfunction
+
+" draw box diagram (solid lines)
+inoremap <leader>boxs <ESC>:call CreateBox("solid")<cr>
+" draw box diagram (dotted lines)
+inoremap <leader>boxd <ESC>:call CreateBox("dotted")<cr>
+
+" ┌───────────────────┐
+" │Arrow keys special │
+" └───────────────────┘
+" ←	<-	2190	8592	LEFTWARDS ARROW
+" ↑	-!	2191	8593	UPWARDS ARROW
+" →	->	2192	8594	RIGHTWARDS ARROW
+" ↓	-v	2193	8595	DOWNWARDS ARROW
+" ↔	<>	2194	8596	LEFT RIGHT ARROW
+" ↕	UD	2195	8597	UP DOWN ARROW
+" ⇐	<=	21D0	8656	LEFTWARDS DOUBLE ARROW
+" ⇒	=>	21D2	8658	RIGHTWARDS DOUBLE ARROW
+" ⇔	==	21D4	8660	LEFT RIGHT DOUBLE ARROW
+" «	<<	0xab	171	LEFT-POINTING DOUBLE ANGLE QUOTATION MARK
+" »	>>	0xbb	187	RIGHT-POINTING DOUBLE ANGLE QUOTATION MARK
+
+
+" ┌────────────────────┐
+" │    Box Drawings    │
+" └────────────────────┘
+" ─	hh	2500	9472	BOX DRAWINGS LIGHT HORIZONTAL
+" ━	HH	2501	9473	BOX DRAWINGS HEAVY HORIZONTAL
+" │	vv	2502	9474	BOX DRAWINGS LIGHT VERTICAL
+" ┃	VV	2503	9475	BOX DRAWINGS HEAVY VERTICAL
+" ┄	3-	2504	9476	BOX DRAWINGS LIGHT TRIPLE DASH HORIZONTAL
+" ┅	3_	2505	9477	BOX DRAWINGS HEAVY TRIPLE DASH HORIZONTAL
+" ┆	3!	2506	9478	BOX DRAWINGS LIGHT TRIPLE DASH VERTICAL
+" ┇	3/	2507	9479	BOX DRAWINGS HEAVY TRIPLE DASH VERTICAL
+" ┈	4-	2508	9480	BOX DRAWINGS LIGHT QUADRUPLE DASH HORIZONTAL
+" ┉	4_	2509	9481	BOX DRAWINGS HEAVY QUADRUPLE DASH HORIZONTAL
+" ┊	4!	250A	9482	BOX DRAWINGS LIGHT QUADRUPLE DASH VERTICAL
+" ┋	4/	250B	9483	BOX DRAWINGS HEAVY QUADRUPLE DASH VERTICAL
+" ┌	dr	250C	9484	BOX DRAWINGS LIGHT DOWN AND RIGHT
+" ┍	dR	250D	9485	BOX DRAWINGS DOWN LIGHT AND RIGHT HEAVY
+" ┎	Dr	250E	9486	BOX DRAWINGS DOWN HEAVY AND RIGHT LIGHT
+" ┏	DR	250F	9487	BOX DRAWINGS HEAVY DOWN AND RIGHT
+" ┐	dl	2510	9488	BOX DRAWINGS LIGHT DOWN AND LEFT
+" ┑	dL	2511	9489	BOX DRAWINGS DOWN LIGHT AND LEFT HEAVY
+" ┒	Dl	2512	9490	BOX DRAWINGS DOWN HEAVY AND LEFT LIGHT
+" ┓	LD	2513	9491	BOX DRAWINGS HEAVY DOWN AND LEFT
+" └	ur	2514	9492	BOX DRAWINGS LIGHT UP AND RIGHT
+" ┕	uR	2515	9493	BOX DRAWINGS UP LIGHT AND RIGHT HEAVY
+" ┖	Ur	2516	9494	BOX DRAWINGS UP HEAVY AND RIGHT LIGHT
+" ┗	UR	2517	9495	BOX DRAWINGS HEAVY UP AND RIGHT
+" ┘	ul	2518	9496	BOX DRAWINGS LIGHT UP AND LEFT
+" ┙	uL	2519	9497	BOX DRAWINGS UP LIGHT AND LEFT HEAVY
+" ┚	Ul	251A	9498	BOX DRAWINGS UP HEAVY AND LEFT LIGHT
+" ┛	UL	251B	9499	BOX DRAWINGS HEAVY UP AND LEFT
+" ├	vr	251C	9500	BOX DRAWINGS LIGHT VERTICAL AND RIGHT
+" ┝	vR	251D	9501	BOX DRAWINGS VERTICAL LIGHT AND RIGHT HEAVY
+" ┠	Vr	2520	9504	BOX DRAWINGS VERTICAL HEAVY AND RIGHT LIGHT
+" ┣	VR	2523	9507	BOX DRAWINGS HEAVY VERTICAL AND RIGHT
+" ┤	vl	2524	9508	BOX DRAWINGS LIGHT VERTICAL AND LEFT
+" ┥	vL	2525	9509	BOX DRAWINGS VERTICAL LIGHT AND LEFT HEAVY
+" ┨	Vl	2528	9512	BOX DRAWINGS VERTICAL HEAVY AND LEFT LIGHT
+" ┫	VL	252B	9515	BOX DRAWINGS HEAVY VERTICAL AND LEFT
+" ┬	dh	252C	9516	BOX DRAWINGS LIGHT DOWN AND HORIZONTAL
+" ┯	dH	252F	9519	BOX DRAWINGS DOWN LIGHT AND HORIZONTAL HEAVY
+" ┰	Dh	2530	9520	BOX DRAWINGS DOWN HEAVY AND HORIZONTAL LIGHT
+" ┳	DH	2533	9523	BOX DRAWINGS HEAVY DOWN AND HORIZONTAL
+" ┴	uh	2534	9524	BOX DRAWINGS LIGHT UP AND HORIZONTAL
+" ┷	uH	2537	9527	BOX DRAWINGS UP LIGHT AND HORIZONTAL HEAVY
+" ┸	Uh	2538	9528	BOX DRAWINGS UP HEAVY AND HORIZONTAL LIGHT
+" ┻	UH	253B	9531	BOX DRAWINGS HEAVY UP AND HORIZONTAL
+" ┼	vh	253C	9532	BOX DRAWINGS LIGHT VERTICAL AND HORIZONTAL
+" ┿	vH	253F	9535	BOX DRAWINGS VERTICAL LIGHT AND HORIZONTAL HEAVY
+" ╂	Vh	2542	9538	BOX DRAWINGS VERTICAL HEAVY AND HORIZONTAL LIGHT
+" ╋	VH	254B	9547	BOX DRAWINGS HEAVY VERTICAL AND HORIZONTAL
+" ╱	FD	2571	9585	BOX DRAWINGS LIGHT DIAGONAL UPPER RIGHT TO LOWER LEFT
+" ╲	BD	2572	9586	BOX DRAWINGS LIGHT DIAGONAL UPPER LEFT TO LOWER RIGHT
+" ▀	TB	2580	9600	UPPER HALF BLOCK
+" ▄	LB	2584	9604	LOWER HALF BLOCK
+" █	FB	2588	9608	FULL BLOCK
+" ▌	lB	258C	9612	LEFT HALF BLOCK
+" ▐	RB	2590	9616	RIGHT HALF BLOCK
+" ░	.S	2591	9617	LIGHT SHADE
+" ▒	:S	2592	9618	MEDIUM SHADE
+" ▓	?S	2593	9619	DARK SHADE
