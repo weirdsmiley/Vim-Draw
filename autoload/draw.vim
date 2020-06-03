@@ -60,3 +60,19 @@ function! draw#CreateDottedBox()
 	" move cursor to writing position
 	execute "normal! k15h"
 endfunction
+
+" not working
+function! draw#CreateNDottedBox()
+	" store position @b
+	execute "normal! qb"
+	" create 1 diagram
+	execute "normal! :call draw#CreateDottedBox()<cr>"
+	" stop recording
+	execute "normal! q"
+	" repeat n-times
+	execute "normal! 4@b"
+	" delete extra lines below
+	execute "normal! j4dd"
+
+endfunction
+

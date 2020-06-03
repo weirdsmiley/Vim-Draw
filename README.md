@@ -18,7 +18,7 @@ $ vim -u NONE -c "helptags ~/.vim/bundle/vim-draw/doc" -c q
   `replace` mode replaces character for each character you type  
   `V-replace` replaces screen real estate, so that characters further on in the file never appear to move.  
 
-- Why not to use `replace` mode?
+- Why not to use `replace` mode?  
   The difference arises for `<TAB>` character. In `replace` mode, one `<TAB>` replaces one whichever character it is. But in `V-replace` mode, it makes it appear that further characters in file are not shifting.  
   For example, draw a box diagram `<leader>boxd` while in `insert` mode.  
 ```

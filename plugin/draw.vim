@@ -6,6 +6,8 @@ function! CreateBox(type)
 		call draw#CreateSolidBox()
 	elseif a:type ==# "dotted"
 		call draw#CreateDottedBox()
+	elseif a:type ==# "ndotted"
+		call draw#CreateNDottedBox()
 	endif
 endfunction
 
@@ -13,6 +15,11 @@ endfunction
 inoremap <leader>boxs <ESC>:call CreateBox("solid")<cr>
 " draw box diagram (dotted lines)
 inoremap <leader>boxd <ESC>:call CreateBox("dotted")<cr>
+
+" draw n diagrams (dotted)
+inoremap <leader>boxn <ESC>:call CreateBox("ndotted")<cr>
+
+
 
 " ┌───────────────────┐
 " │Arrow keys special │
