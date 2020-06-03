@@ -22,6 +22,7 @@ This plugin is helpful in generating box diagrams in Vim.
 - More designs of diagram
 - Generating dynamic-sized diagrams
 - Creating multiple diagrams (to be used as tables)
+- Addind tree structure support
 
 ================================================================================~
 03. Configuration                                                               ~
