@@ -1,6 +1,29 @@
 # Vim-Draw
 This plugin is made to be used to design box diagrams in Vim easily.
 
+Following are few examples:
+```
++----------------+           ┌────────────────┐
+|                |           │                │
++----------------+           └────────────────┘
+
+
++----------------+----------------+----------------+
+|                |                |                |
++----------------+----------------+----------------+
+|                |                |                |
++----------------+----------------+----------------+
+
+
++----------------+
+|                |
++----------------+
+|                |
++----------------+
+|                |
++----------------+
+```
+
 ## Installation
 - For manual installation  execute the following commands in your terminal:
 ```shell
@@ -21,22 +44,6 @@ $ vim -u NONE -c "helptags ~/.vim/bundle/vim-draw/doc" -c q
   The difference arises for `<TAB>` character. In `replace` mode, one `<TAB>` replaces one whichever character it is. But in `V-replace` mode, it makes it appear that further characters in file are not shifting.  
   For example, draw a box diagram `<leader>boxd` while in `insert` mode.  
 ```
-+----------------+           ┌────────────────┐
-|                |           │                │
-+----------------+           └────────────────┘
-
-
-+----------------+----------------+----------------+
-|                |                |                |
-+----------------+----------------+----------------+
-|                |                |                |
-+----------------+----------------+----------------+
-
-
-+----------------+
-|                |
-+----------------+
-|                |
 +----------------+
 |                |
 +----------------+
