@@ -8,9 +8,8 @@ $ mkdir -p ~/.vim/bundle/vim-draw
 $ git clone https://github.com/weirdsmiley/Vim-Draw.git ~/.vim/bundle/vim-draw/
 $ vim -u NONE -c "helptags ~/.vim/bundle/vim-draw/doc" -c q
 ```
-- For installation via make just type `make` in your terminal.
-
 ## Configurations and Tips
+- For keybindings and function usage see `doc/vim-draw.txt`
 - Use `visual replace mode` to edit into the diagram  
     - this mode can be invoked by `gR`  
 
