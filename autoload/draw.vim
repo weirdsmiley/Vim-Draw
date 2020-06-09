@@ -60,3 +60,48 @@ function! draw#CreateDottedBox()
 	" move cursor to writing position
 	execute "normal! k15h"
 endfunction
+
+function! draw#CreateNDottedBox(n)
+	" generate (n x 1) matrix
+	let row = 1
+	while row <= a:n
+		call draw#CreateDottedBox()
+		execute "normal! i"
+		let row += 1
+	endwhile
+	" delete extra lines and put cursor to the first line (if n>1)
+	if a:n > 1
+		execute "normal! j" . (a:n-1) . "dd" . (2*a:n) . "k"
+	else
+		execute "normal! k0"
+	endif
+endfunction
+
+
+function! draw#CreateNMDottedBox(dimension)
+	" handling corner case when either row/col = 1
+	if a:dimension[1] == 1
+		call draw#CreateNDottedBox(a:dimension[0])
+	else
+		" generate n x m sized matrix
+		let row = 1
+		let col = 1
+		" create dimension[0] x 1 matrix
+		call draw#CreateNDottedBox(a:dimension[0])
+		" complete dimension[0] x dimension[1] matrix
+		while row <= 2*a:dimension[0]+1
+			execute "normal! yy" . (a:dimension[1]-1) . "pk"
+			let col = 1
+			" replay yank/paste for d[1]-1 columns
+			while col <= a:dimension[1]-1
+				execute "normal! Jxx"
+				let col += 1
+			endwhile
+			" move to next line
+			execute "normal! j"
+			let row += 1
+		endwhile
+		" adjust cursor position
+		execute "normal! " . (2*a:dimension[0]) . "k0jll"
+	endif
+endfunction

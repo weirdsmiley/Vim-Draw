@@ -19,17 +19,25 @@ This plugin is helpful in generating box diagrams in Vim.
 ================================================================================~
 02. Features (to be added)                                                      ~
 ================================================================================~
+<<<<<<< HEAD
 - More designs of diagram
 - Generating dynamic-sized diagrams
 - Creating multiple diagrams (to be used as tables)
 - Addind tree structure support
+=======
+- Generating dynamic-sized matrices
+>>>>>>> dev1.0.0
 
 ================================================================================~
 03. Configuration                                                               ~
 ================================================================================~
 - Below are the custom mappings defined by default
-    - "<leader>boxs" : to make the diagram with solid lines
-    - "<leader>boxd" : to make the diagram with dotted lines
+    - <leader>boxs : to make the diagram with solid lines
+    - <leader>boxd : to make the diagram with dotted lines
+    - <leader>boxn : to make Nx1 matrix with dotted lines*
+    - <leader>boxx : to make NxM matrix with dotted lines*
+*: The function-call will prompt user for the values of N and M accordingly.
+
 - The above mappings can be changed inside plugin/draw.vim
 
 ================================================================================~
