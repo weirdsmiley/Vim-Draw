@@ -9,7 +9,8 @@ CONTENTS
    01. Introduction ............................................................
    02. Features ................................................................
    03. Configuration ...........................................................
-   04. License ................................................................. 
+   04. Future ..................................................................
+   05. License ................................................................. 
 
 ================================================================================~
 01. Introduction                                                                ~
@@ -17,10 +18,11 @@ CONTENTS
 This plugin is helpful in generating box diagrams in Vim.
 
 ================================================================================~
-02. Features (to be added)                                                      ~
+02. Features                                                                    ~  
 ================================================================================~
-- Generating dynamic-sized matrices
-- Addind tree structure support
+- Create the following box diagrams:
+    - Single-cell box using solid or dotted lines
+    - Any NxM sized matrix using dotted lines
 
 ================================================================================~
 03. Configuration                                                               ~
@@ -35,7 +37,13 @@ This plugin is helpful in generating box diagrams in Vim.
 - The above mappings can be changed inside plugin/draw.vim
 
 ================================================================================~
-04. LICENSE                                                                     ~
+04. Future (features for upcoming releases)                                     ~
+================================================================================~
+- Support for dynamic editing in matrices
+- Addind tree structure support
+
+================================================================================~
+05. LICENSE                                                                     ~
 ================================================================================~
 MIT License. Copyright (c) 2020 Manas
 
