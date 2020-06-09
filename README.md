@@ -21,6 +21,22 @@ $ vim -u NONE -c "helptags ~/.vim/bundle/vim-draw/doc" -c q
   The difference arises for `<TAB>` character. In `replace` mode, one `<TAB>` replaces one whichever character it is. But in `V-replace` mode, it makes it appear that further characters in file are not shifting.  
   For example, draw a box diagram `<leader>boxd` while in `insert` mode.  
 ```
++----------------+           ┌────────────────┐
+|                |           │                │
++----------------+           └────────────────┘
+
+
++----------------+----------------+----------------+
+|                |                |                |
++----------------+----------------+----------------+
+|                |                |                |
++----------------+----------------+----------------+
+
+
++----------------+
+|                |
++----------------+
+|                |
 +----------------+
 |                |
 +----------------+
