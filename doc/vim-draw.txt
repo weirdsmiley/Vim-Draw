@@ -1,4 +1,4 @@
-*vim-draw.txt* For Vim with +digraphs	Last change: 2020 June 3
+*vim-draw.txt* For Vim with +digraphs	Last change: 2020 June 9
 
 ================================================================================~
                                    VIM-DRAW                                     ~
