@@ -7,7 +7,11 @@ function! CreateBox(type)
 	elseif a:type ==# "dotted"
 		call draw#CreateDottedBox()
 	elseif a:type ==# "ndotted"
-		call draw#CreateNDottedBox()
+		let n = input('Enter number of rows: ')
+		call draw#CreateNDottedBox(n)
+	elseif a:type ==# "nmdotted"
+		let dimension = split(input('Enter dimensions: '))
+		call draw#CreateNMDottedBox(dimension)
 	endif
 endfunction
 
@@ -18,6 +22,9 @@ inoremap <leader>boxd <ESC>:call CreateBox("dotted")<cr>
 
 " draw n diagrams (dotted)
 inoremap <leader>boxn <ESC>:call CreateBox("ndotted")<cr>
+
+" draw n x m matrix (dotted)
+inoremap <leader>boxx <ESC>:call CreateBox("nmdotted")<cr>
 
 
 
