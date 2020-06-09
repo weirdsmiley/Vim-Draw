@@ -18,7 +18,7 @@ CONTENTS
 This plugin is helpful in generating box diagrams in Vim.
 
 ================================================================================~
-02. Features                                                                    ~  
+02. Features                                                                    ~
 ================================================================================~
 - Create the following box diagrams:
     - Single-cell box using solid or dotted lines
