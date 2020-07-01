@@ -64,4 +64,4 @@ The box has a tab character inside it.
 ```
 
 ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈  
-Vim-Draw | version 1.0.0
+Vim-Draw | version 1.1.0
